@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Stick_14_RGB.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Stick_14_RGB.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=Stick14RGB/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Stick_14_RGB.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Stick_14_RGB.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=stick14rgb/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/Stick14RGB/bin
-copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+makeDirectory ${TMPDIR}/stick14rgb/lib
+copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/Stick14RGB.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/stick14rgb.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/Stick14RGB.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/stick14rgb.tar *
 checkReturnCode
 
 # Cleanup
