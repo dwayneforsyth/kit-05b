@@ -70,7 +70,7 @@
 #define Common_Cathode
 #define PATTERN15
 #define PATTERN16
-#define PATTERN17
+; #define PATTERN17
 #define PATTERN18
 #define DEDICATED_BUTTON
 #define DEDICATED_BUTTON2
@@ -178,7 +178,6 @@ FSR EQU FSR0L
 #include pattern_engine.asm
 #include "pattern_15.asm"
 #include "pattern_16.asm"
-#include "pattern_17.asm"
 #include "pattern_18.asm"
 #include display_1bit_s14rgb.asm    ; RGB Stick Anode / cathode
 
@@ -328,7 +327,6 @@ MasterTable
 
 ; Down here for memory placement
 #include display_1bit_s14rgb_part2.asm   ; RGB Stick Anode / cathode
-#include pattern_17_part2.asm
     
 ; These are the pattern tables
 #include <patterns_stick14_rgb.asm>

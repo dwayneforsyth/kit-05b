@@ -6,17 +6,40 @@
 ;
 ;        11112222    33334444  
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'10001101',b'11000000'         ; 12 cycles hi Red down
+    dt b'10001110',b'11000000'         ; 14 cycles hi Red down
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'00001101',b'11000000'         ; 12 cycles hi Red up
+    dt b'00001110',b'11000000'         ; 14 cycles hi Red up
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'01001101',b'00110000'         ; 12 cycles hi Green down
+    dt b'01001110',b'00110000'         ; 14 cycles hi Green down
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'00001101',b'00110000'         ; 12 cycles hi Green up
+    dt b'00001110',b'00110000'         ; 14 cycles hi Green up
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'00101101',b'00001100'         ; 12 cycles hi blue down
+    dt b'00101110',b'00001100'         ; 14 cycles hi blue down
     dt b'00011111',b'00000000'         ; clear all Leds
-    dt b'00001101',b'00001100'         ; 12 cycles hi blue up
+    dt b'00001110',b'00001100'         ; 14 cycles hi blue up
+    end_pattern
+
+;**********************************************************************
+;
+;***********************************************************************
+
+    start_pattern 0x12, 0x04
+;          RRRRRR    RRRRRRRR      GGGGGG    GGGGGGGG      BBBBBB    BBBBBBBB
+    dt b'11110000',b'11111111',b'11011111',b'11110000',b'11111111',b'00001111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111000',b'01111111',b'11001111',b'11111000',b'11111111',b'10000111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111100',b'00111111',b'11000111',b'11111100',b'11111111',b'11000011' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111110',b'00011111',b'11100011',b'11111110',b'11011111',b'11100001' ; Red Down, Green down, Blue down, 64 count
+
+    dt b'11111111',b'00001111',b'11110000',b'11111111',b'11001111',b'11110000' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111111',b'10000111',b'11111000',b'01111111',b'11000111',b'11111000' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111111',b'11000011',b'11111100',b'00111111',b'11000011',b'11111100' ; Red Down, Green down, Blue down, 64 count
+    dt b'11011111',b'11100001',b'11111110',b'00011111',b'11100001',b'11111110' ; Red Down, Green down, Blue down, 64 count
+
+    dt b'11001111',b'11110000',b'11111111',b'00001111',b'11110000',b'11111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11000111',b'11111000',b'11111111',b'10000111',b'11111000',b'01111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11000011',b'11111100',b'11111111',b'11000011',b'11111100',b'00111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11100001',b'11111110',b'11111111',b'11100001',b'11111110',b'00011111' ; Red Down, Green down, Blue down, 64 count
+
     end_pattern
 
 ;**********************************************************************
@@ -25,42 +48,19 @@
 
     start_pattern 0x12, 0x04
 ;            RRRR    RRRRRRRR      GGGGGG    GGGGGGGG      BBBBBB    BBBBBBBB
-    dt b'11000000',b'11111111',b'11001111',b'11110000',b'11001111',b'00001111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001000',b'01111111',b'11001111',b'11111000',b'11001111',b'10000111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001100',b'00111111',b'11000111',b'11111100',b'11001111',b'11000011' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001110',b'00011111',b'11000011',b'11111110',b'11001111',b'11100001' ; Red Down, Green down, Blue down, 64 count
+    dt b'11110000',b'11111111',b'11111110',b'00011111',b'11111111',b'01000011' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111000',b'01111111',b'11111100',b'00111111',b'11011111',b'11100001' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111100',b'00111111',b'11111000',b'01111111',b'11001111',b'11110000' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111110',b'00011111',b'11110000',b'11111111',b'11000111',b'11111000' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111111',b'00001111',b'11100001',b'11111110',b'11000011',b'11111100' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111111',b'10000111',b'11000011',b'11111100',b'11100001',b'11111110' ; Red Down, Green down, Blue down, 64 count
 
-    dt b'11001111',b'00001111',b'11000000',b'11111111',b'11001111',b'11110000' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'10000111',b'11001000',b'01111111',b'11000111',b'11111000' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'11000011',b'11001100',b'00111111',b'11000011',b'11111100' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'11100001',b'11001110',b'00011111',b'11000001',b'11111110' ; Red Down, Green down, Blue down, 64 count
-
-    dt b'11001111',b'11110000',b'11001111',b'00001111',b'11000000',b'11111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000111',b'11111000',b'11001111',b'10000111',b'11001000',b'01111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000011',b'11111100',b'11001111',b'11000011',b'11001100',b'00111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000001',b'11111110',b'11001111',b'11100001',b'11001110',b'00011111' ; Red Down, Green down, Blue down, 64 count
-
-    end_pattern
-
-;**********************************************************************
-;
-;***********************************************************************
-
-    start_pattern 0x12, 0x04
-;            RRRR    RRRRRRRR      GGGGGG    GGGGGGGG      BBBBBB    BBBBBBBB
-    dt b'11000000',b'11111111',b'11001110',b'00011111',b'11001111',b'01000011' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001000',b'01111111',b'11001100',b'00111111',b'11001111',b'11100001' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001100',b'00111111',b'11001000',b'01111111',b'11001111',b'11110000' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001110',b'00011111',b'11000000',b'11111111',b'11000111',b'11111000' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'00001111',b'11000001',b'11111110',b'11000011',b'11111100' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'10000111',b'11000011',b'11111100',b'11000001',b'11111110' ; Red Down, Green down, Blue down, 64 count
-
-    dt b'11001111',b'11000011',b'11000111',b'11111000',b'11000000',b'11111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'11100001',b'11001111',b'11110000',b'11001000',b'01111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11001111',b'11110000',b'11001111',b'11100001',b'11001100',b'00111111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000111',b'11111000',b'11001111',b'11000011',b'11001110',b'00011111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000011',b'11111100',b'11001111',b'10000111',b'11001111',b'00001111' ; Red Down, Green down, Blue down, 64 count
-    dt b'11000001',b'11111110',b'11001111',b'00001111',b'11001111',b'00000111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11111111',b'11000011',b'11000111',b'11111000',b'11110000',b'11111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11011111',b'11100001',b'11001111',b'11110000',b'11111000',b'01111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11001111',b'11110000',b'11011111',b'11100001',b'11111100',b'00111111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11000111',b'11111000',b'11111111',b'11000011',b'11111110',b'00011111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11000011',b'11111100',b'11111111',b'10000111',b'11111111',b'00001111' ; Red Down, Green down, Blue down, 64 count
+    dt b'11100001',b'11111110',b'11111111',b'00001111',b'11111111',b'00000111' ; Red Down, Green down, Blue down, 64 count
 
     end_pattern
 
@@ -109,6 +109,8 @@
 ;
 ;        11112222    33334444    55556666    77778888    99990000    11112222 
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'00110000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'00001100',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'00000011',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
@@ -121,6 +123,8 @@
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'00000000',b'00000011',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'00000000',b'00000000',b'00000000',b'00000000',b'00110000',b'00000000'
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     dt b'00000000',b'00000000',b'00000000',b'00000000',b'00001100',b'00000000'
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
@@ -393,41 +397,41 @@
     start_pattern 0x10, 0x50
 ;
 ;        11112222    33334444
-    dt b'01001100',b'01010000'         ; 14 cycles low down
-    dt b'10001100',b'10100000'         ; 14 cycles Mid down
-    dt b'01001100',b'11110000'         ; 14 cycles hi Green down
-    dt b'10001100',b'10100000'         ; 14 cycles Mid down
-    dt b'01001100',b'01010000'         ; 14 cycles low down
-    dt b'10001100',b'00000000'         ; 14 cycles blank down
+    dt b'01001110',b'01010000'         ; 14 cycles low down
+    dt b'10001110',b'10100000'         ; 14 cycles Mid down
+    dt b'01001110',b'11110000'         ; 14 cycles hi Green down
+    dt b'10001110',b'10100000'         ; 14 cycles Mid down
+    dt b'01001110',b'01010000'         ; 14 cycles low down
+    dt b'10001110',b'00000000'         ; 14 cycles blank down
 
-    dt b'00101100',b'01000100'         ; 14 cycles low down
-    dt b'10001100',b'10001000'         ; 14 cycles Mid down
-    dt b'00101100',b'11001100'         ; 14 cycles hi Green down
-    dt b'10001100',b'10001000'         ; 14 cycles Mid down
-    dt b'00101100',b'01000100'         ; 14 cycles low down
-    dt b'10001100',b'00000000'         ; 14 cycles blank down
+    dt b'00101110',b'01000100'         ; 14 cycles low down
+    dt b'10001110',b'10001000'         ; 14 cycles Mid down
+    dt b'00101110',b'11001100'         ; 14 cycles hi Green down
+    dt b'10001110',b'10001000'         ; 14 cycles Mid down
+    dt b'00101110',b'01000100'         ; 14 cycles low down
+    dt b'10001110',b'00000000'         ; 14 cycles blank down
 
-    dt b'01001100',b'00010100'         ; 14 cycles low down
-    dt b'00101100',b'00101000'         ; 14 cycles Mid down
-    dt b'01001100',b'00111100'         ; 14 cycles hi Green down
-    dt b'00101100',b'00101000'         ; 14 cycles Mid down
-    dt b'01001100',b'00010100'         ; 14 cycles low down
-    dt b'00101100',b'00000000'         ; 14 cycles blank down
+    dt b'01001110',b'00010100'         ; 14 cycles low down
+    dt b'00101110',b'00101000'         ; 14 cycles Mid down
+    dt b'01001110',b'00111100'         ; 14 cycles hi Green down
+    dt b'00101110',b'00101000'         ; 14 cycles Mid down
+    dt b'01001110',b'00010100'         ; 14 cycles low down
+    dt b'00101110',b'00000000'         ; 14 cycles blank down
     end_pattern
 
 
 
 
 ;**********************************************************************
-;
+; annoy Ward
 ;**********************************************************************
 
     start_pattern 0x0f, 0x30
 ;
 ;        11112222    33334444    55556666    77778888    99990000    11112222 
-    dt b'00001111',b'11111111',b'00000000',b'00000000',b'00000000',b'00000000'
-    dt b'00000000',b'00000000',b'00001111',b'11111111',b'00000000',b'00000000'
-    dt b'00000000',b'00000000',b'00000000',b'00000000',b'00001111',b'11111111'
+    dt b'00111111',b'11111111',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'00000000',b'00000000',b'00111111',b'11111111',b'00000000',b'00000000'
+    dt b'00000000',b'00000000',b'00000000',b'00000000',b'00111111',b'11111111'
     end_pattern
 
 ;**********************************************************************
@@ -437,9 +441,9 @@
     start_pattern 0x0f, 0xff
 ;
 ;        11112222    33334444    55556666    77778888    99990000    11112222 
-    dt b'11001111',b'11111111',b'00000000',b'00000000',b'00000000',b'00000000'
-    dt b'11000000',b'00000000',b'00001111',b'11111111',b'00000000',b'00000000'
-    dt b'11000000',b'00000000',b'00000000',b'00000000',b'00001111',b'11111111'
+    dt b'11111111',b'11111111',b'00000000',b'00000000',b'00000000',b'00000000'
+    dt b'11000000',b'00000000',b'00111111',b'11111111',b'00000000',b'00000000'
+    dt b'11000000',b'00000000',b'00000000',b'00000000',b'00111111',b'11111111'
     dt b'11000000',b'00000000',b'00000000',b'00000000',b'00000000',b'00000000'
     end_pattern
 
@@ -451,11 +455,11 @@
 ;
 ;        11112222    33334444  
     dt b'10000001',b'11000000'         ; 1 cycles hi red down
-    dt b'10001011',b'00000000'         ; 11 cycles blank down
+    dt b'10001101',b'00000000'         ; 13 cycles blank down
     dt b'01000001',b'00110000'         ; 1 cycles hi green down
-    dt b'01001011',b'00000000'         ; 11 cycles blank down
+    dt b'01001101',b'00000000'         ; 13 cycles blank down
     dt b'00100001',b'00001100'         ; 1 cycles hi blue down
-    dt b'00101011',b'00000000'         ; 11 cycles blank down
+    dt b'00101101',b'00000000'         ; 13 cycles blank down
     end_pattern
 
 ;**********************************************************************
@@ -466,11 +470,11 @@
 ;
 ;        11112222    33334444  
     dt b'10000010',b'11000000'         ; 2 cycles hi red down
-    dt b'10001100',b'00000000'         ; 12 cycles blank down
+    dt b'10001110',b'00000000'         ; 12 cycles blank down
     dt b'01000010',b'00110000'         ; 2 cycles hi green down
-    dt b'01001100',b'00000000'         ; 12 cycles blank down
+    dt b'01001110',b'00000000'         ; 12 cycles blank down
     dt b'00100010',b'00001100'         ; 2 cycles hi blue down
-    dt b'00101100',b'00000000'         ; 12 cycles blank down
+    dt b'00101110',b'00000000'         ; 12 cycles blank down
     end_pattern
 
 
@@ -485,11 +489,11 @@
 ;
 ;        11112222    33334444  
     dt b'10000001',b'11000000'         ; 1 cycles hi red down
-    dt b'10001100',b'00000000'         ; 12 cycles blank down
+    dt b'10001110',b'00000000'         ; 12 cycles blank down
     dt b'01000001',b'00110000'         ; 1 cycles hi green down
-    dt b'01001100',b'00000000'         ; 12 cycles blank down
+    dt b'01001110',b'00000000'         ; 12 cycles blank down
     dt b'00100001',b'00001100'         ; 1 cycles hi blue down
-    dt b'00101100',b'00000000'         ; 12 cycles blank down
+    dt b'00101110',b'00000000'         ; 12 cycles blank down
     end_pattern
 
     ORG	0xF000				; data EEPROM location

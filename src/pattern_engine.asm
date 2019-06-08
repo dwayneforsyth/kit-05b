@@ -434,7 +434,7 @@ ploop1a
     call         toggle_demo   
 #endif
 #ifdef SRGB
-    movlw        0x03              ; if both buttons pressed
+    movlw        0x06              ; if both buttons pressed
     subwf        button,w
     btfsc        STATUS,Z
     call         toggle_demo   

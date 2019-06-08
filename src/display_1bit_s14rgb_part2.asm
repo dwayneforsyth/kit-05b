@@ -26,300 +26,343 @@
 rgb_stick_expand  ; this is a nice chunk of code without jumps to sit on the 11 bit boundry
 ;**********************************************************************
 
-
-    movlw        LOW C3_C2_reg
-    movwf        FSR0L
-    movlw        HIGH C3_C2_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,0                    ; 1R
-    movwf		 INDF0
-
-    movlw        LOW C4_C3_reg
-    movwf        FSR0L
-    movlw        HIGH C4_C3_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,1                    ; 2R
-    movwf		 INDF0
- 
-    movlw        LOW C4_C0_reg 
-    movwf        FSR0L
-    movlw        HIGH C4_C0_reg 
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,2                     ; 3R
-    movwf		 INDF0            
-
-    movlw        LOW C5_C4_reg
-    movwf        FSR0L
-    movlw        HIGH C5_C4_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,3                    ; 4R
-    movwf		 INDF0
-
-    movlw        LOW C5_C1_reg
-    movwf        FSR0L
-    movlw        HIGH C5_C1_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,4                    ; 5R
-    movwf		 INDF0
-
-    movlw        LOW C0_C3_reg
-    movwf        FSR0L
-    movlw        HIGH C0_C3_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,5                    ; 6R
-    movwf		 INDF0
-
-    movlw        LOW C3_A5_reg
-    movwf        FSR0L
-    movlw        HIGH C3_A5_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,6                    ; R7
-    movwf		 INDF0
-
-    movlw        LOW C0_A5_reg
-    movwf        FSR0L
-    movlw        HIGH C0_A5_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in1,7                    ; 8R
-    movwf		 INDF0
-
-    movlw        LOW A5_C2_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C2_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in0,0                    ; 9R
-    movwf		 INDF0
-
-    movlw        LOW A5_C5_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C5_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in0,1                    ; 10R
-    movwf		 INDF0
-
-    movlw        LOW C2_C1_reg
+    movlw        LOW C2_C1_reg ; 1
     movwf        FSR0L
     movlw        HIGH C2_C1_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in0,2                    ; R11
-    movwf		 INDF0
+    btfsc        in1,0                    ; R1
+    movwf    INDF0
 
-    movlw        LOW C2_C5_reg
+    movlw        LOW C3_C2_reg ; 2
+    movwf        FSR0L
+    movlw        HIGH C3_C2_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,1                    ; R2
+    movwf    INDF0
+
+    movlw        LOW C4_C3_reg ; 3
+    movwf        FSR0L
+    movlw        HIGH C4_C3_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,2                    ; R3
+    movwf    INDF0
+ 
+    movlw        LOW C5_C4_reg ; 4
+    movwf        FSR0L
+    movlw        HIGH C5_C4_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,3                    ; R4
+    movwf    INDF0
+
+    movlw        LOW A5_C5_reg ; 5
+    movwf        FSR0L
+    movlw        HIGH A5_C5_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,4                    ; R5
+    movwf    INDF0
+
+    movlw        LOW A5_C2_reg ; 6
+    movwf        FSR0L
+    movlw        HIGH A5_C2_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,5                    ; R6
+    movwf    INDF0
+
+    movlw        LOW C1_C0_reg ; 7
+    movwf        FSR0L
+    movlw        HIGH C1_C0_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in1,6                    ; R7
+    movwf    INDF0
+
+    movlw        LOW C2_C5_reg  ; 8
     movwf        FSR0L
     movlw        HIGH C2_C5_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in0,3                    ; 12R
-    movwf		 INDF0
+    btfsc        in1,7                    ; R8
+    movwf    INDF0
 
-
-    movlw        LOW C3_C1_reg
+    movlw        LOW C3_A5_reg ; 9
     movwf        FSR0L
-    movlw        HIGH C3_C1_reg
+    movlw        HIGH C3_A5_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,0                    ; G1
-	movwf		 INDF0
+    btfsc        in0,0                    ; R9
+    movwf    INDF0
 
-    movlw        LOW C4_C2_reg
+    movlw        LOW C4_C0_reg ; 10
     movwf        FSR0L
-    movlw        HIGH C4_C2_reg
+    movlw        HIGH C4_C0_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,1                    ; 2G
-	movwf		 INDF0
+    btfsc        in0,1                    ; R10
+    movwf    INDF0
 
-    movlw        LOW C4_A5_reg
+    movlw        LOW C5_C1_reg ; 11
     movwf        FSR0L
-    movlw        HIGH C4_A5_reg
+    movlw        HIGH C5_C1_reg 
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,2                    ; 3G
-	movwf		 INDF0
- 
+    btfsc        in0,2                    ; R11
+    movwf    INDF0            
 
-    movlw        LOW C5_C3_reg
+    movlw        LOW C0_C3_reg ;12
     movwf        FSR0L
-    movlw        HIGH C5_C3_reg
+    movlw        HIGH C0_C3_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,3                    ; 4G
-	movwf		 INDF0
+    btfsc        in0,3                    ; R12
+    movwf    INDF0
 
-    movlw        LOW C5_C0_reg 
+    movlw        LOW C0_A5_reg ; 13
     movwf        FSR0L
-    movlw        HIGH C5_C0_reg 
+    movlw        HIGH C0_A5_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,4                    ; 5G
-	movwf		 INDF0
+    btfsc        in0,4                    ; R13
+    movwf    INDF0
 
-    movlw        LOW C0_C2_reg
+    movlw        LOW C1_C4_reg ; 14
     movwf        FSR0L
-    movlw        HIGH C0_C2_reg
+    movlw        HIGH C1_C4_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in3,5                    ; 6G
-	movwf		 INDF0
- 
-   movlw        LOW C3_C5_reg
-    movwf        FSR0L 
-    movlw        HIGH C3_C5_reg
-    movwf        FSR0H 
-    movlw        0xff
-    btfsc        in3,6
-	movwf		 INDF0           ; 7G
-
-    movlw        LOW C0_C5_reg
-    movwf        FSR0L
-    movlw        HIGH C0_C5_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in3,7                    
-	movwf		 INDF0              ; 8G
+    btfsc        in0,5                    ; R14
+    movwf    INDF0
 
 
-    movlw        LOW A5_C1_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C1_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in2,0                    ; 9G
-	movwf		 INDF0
 
-    movlw        LOW A5_C4_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C4_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in2,1                    ; 10G
-	movwf		 INDF0
-
-    movlw        LOW C2_C0_reg
+    movlw        LOW C2_C0_reg ;1
     movwf        FSR0L
     movlw        HIGH C2_C0_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in2,2                    ; 11G
-	movwf		 INDF0
+    btfsc        in3,0                    ; G1
+    movwf        INDF0
 
-    movlw        LOW C2_C4_reg
+    movlw        LOW C3_C1_reg ; 2
+    movwf        FSR0L
+    movlw        HIGH C3_C1_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,1                    ; G2
+    movwf        INDF0
+
+    movlw        LOW C4_C2_reg ; 3
+    movwf        FSR0L
+    movlw        HIGH C4_C2_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,2                    ; G3
+    movwf        INDF0
+
+    movlw        LOW C5_C3_reg ;4
+    movwf        FSR0L
+    movlw        HIGH C5_C3_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,3                    ; G4
+    movwf        INDF0
+
+    movlw        LOW A5_C4_reg ; 5
+    movwf        FSR0L
+    movlw        HIGH A5_C4_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,4                    ; G5
+    movwf        INDF0
+
+    movlw        LOW A5_C1_reg ; 6
+    movwf        FSR0L
+    movlw        HIGH A5_C1_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,5                    ; G6
+    movwf        INDF0
+
+    movlw        LOW C1_A5_reg ; 7
+    movwf        FSR0L
+    movlw        HIGH C1_A5_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in3,6                    ; G7
+    movwf        INDF0
+
+    movlw        LOW C2_C4_reg ; 8
     movwf        FSR0L
     movlw        HIGH C2_C4_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in2,3                    ; 12G
-	movwf		 INDF0
-
-
-    movlw        LOW C3_C0_reg
+    btfsc        in3,7                    ; G8
+    movwf        INDF0
+    
+    movlw        LOW C3_C5_reg ; 9
     movwf        FSR0L
-    movlw        HIGH C3_C0_reg
+    movlw        HIGH C3_C5_reg 
     movwf        FSR0H
     movlw        0xff
-    btfsc        in5,0                    ; 1B
-	movwf		 INDF0
+    btfsc        in2,0                    ; G9
+    movwf        INDF0
 
-    movlw        LOW C4_C1_reg
+    movlw        LOW C4_A5_reg ; 10
+    movwf        FSR0L 
+    movlw        HIGH C4_A5_reg
+    movwf        FSR0H 
+    movlw        0xff
+    btfsc        in2,1
+    movwf        INDF0                    ; G10
+ 
+    movlw        LOW C5_C0_reg ; 11
     movwf        FSR0L
-    movlw        HIGH C4_C1_reg
+    movlw        HIGH C5_C0_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in5,1                    ; 2B
-	movwf		 INDF0
+    btfsc        in2,2                    ; G11
+    movwf        INDF0
 
-    movlw        LOW C4_C5_reg
+    movlw        LOW C0_C2_reg ; 12
     movwf        FSR0L
-    movlw        HIGH C4_C5_reg
+    movlw        HIGH C0_C2_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in5,2                    ; 3B
-	movwf		 INDF0
-
-    movlw        LOW C5_C2_reg
+    btfsc        in2,3                    ; G12
+    movwf        INDF0
+ 
+    movlw        LOW C0_C5_reg ; 13
     movwf        FSR0L
-    movlw        HIGH C5_C2_reg
+    movlw        HIGH C0_C5_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in5,3                    ; 4B
-	movwf		 INDF0
+    btfsc        in2,4                    ; G13                    
+    movwf        INDF0
 
-    movlw        LOW C5_A5_reg
+    movlw        LOW C1_C3_reg ; 14
     movwf        FSR0L
-    movlw        HIGH C5_A5_reg
+    movlw        HIGH C1_C3_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in5,4                    ; 5B
-	movwf		 INDF0
+    btfsc        in2,5                    ; G14                    
+    movwf        INDF0
 
-    movlw        LOW C0_C1_reg
-    movwf        FSR0L
-    movlw        HIGH C0_C1_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in5,5                    ; 6B
-	movwf		 INDF0
 
-    movlw        LOW C3_C4_reg
-    movwf        FSR0L
-    movlw        HIGH C3_C4_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in5,6                    ; 7B
-	movwf		 INDF0
-
-    movlw        LOW C0_C4_reg
-    movwf        FSR0L
-    movlw        HIGH C0_C4_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in5,7                    ; 8B
-	movwf		 INDF0
-
-    movlw        LOW A5_C0_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C0_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in4,0                    ; 9B
-	movwf		 INDF0
-
-    movlw        LOW A5_C3_reg
-    movwf        FSR0L
-    movlw        HIGH A5_C3_reg
-    movwf        FSR0H
-    movlw        0xff
-    btfsc        in4,1                    ; 10B
-	movwf		 INDF0
-
-    movlw        LOW C2_A5_reg
+    movlw        LOW C2_A5_reg ; 1
     movwf        FSR0L
     movlw        HIGH C2_A5_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in4,2                    ; 11B
-	movwf		 INDF0 
+    btfsc        in5,0                    ; B1
+    movwf        INDF0
 
-    movlw        LOW C2_C3_reg
+    movlw        LOW C3_C0_reg ; 2
+    movwf        FSR0L
+    movlw        HIGH C3_C0_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,1                    ; B2
+    movwf        INDF0
+
+    movlw        LOW C4_C1_reg ; 3
+    movwf        FSR0L
+    movlw        HIGH C4_C1_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,2                    ; B3
+    movwf        INDF0
+
+    movlw        LOW C5_C2_reg ; 4
+    movwf        FSR0L
+    movlw        HIGH C5_C2_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,3                    ; B4
+    movwf        INDF0
+
+    movlw        LOW A5_C3_reg ; 5
+    movwf        FSR0L
+    movlw        HIGH A5_C3_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,4                    ; B5
+    movwf        INDF0
+
+    movlw        LOW A5_C0_reg ; 6
+    movwf        FSR0L
+    movlw        HIGH A5_C0_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,5                    ; B6
+    movwf        INDF0
+
+    movlw        LOW C1_C5_reg ; 7
+    movwf        FSR0L
+    movlw        HIGH C1_C5_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in5,6                    ; B7
+    movwf        INDF0 
+
+    movlw        LOW C2_C3_reg ; 8
     movwf        FSR0L
     movlw        HIGH C2_C3_reg
     movwf        FSR0H
     movlw        0xff
-    btfsc        in4,3                    ; 12B
-	movwf		 INDF0
+    btfsc        in5,7                    ; B8
+    movwf        INDF0
 
+    movlw        LOW C3_C4_reg ; 9
+    movwf        FSR0L
+    movlw        HIGH C3_C4_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,0                    ; B9
+    movwf        INDF0
 
+    movlw        LOW C4_C5_reg ; 10
+    movwf        FSR0L
+    movlw        HIGH C4_C5_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,1                    ; B10
+    movwf        INDF0
+
+    movlw        LOW C5_A5_reg ; 11  
+    movwf        FSR0L
+    movlw        HIGH C5_A5_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,2                    ; B11
+    movwf        INDF0
+
+    movlw        LOW C0_C1_reg ; 12 
+    movwf        FSR0L
+    movlw        HIGH C0_C1_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,3                    ; B12
+    movwf        INDF0
+
+    movlw        LOW C0_C4_reg ; 13
+    movwf        FSR0L
+    movlw        HIGH C0_C4_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,4                    ; B13
+    movwf        INDF0
+
+    movlw        LOW C1_C2_reg ; 14
+    movwf        FSR0L
+    movlw        HIGH C1_C2_reg
+    movwf        FSR0H
+    movlw        0xff
+    btfsc        in4,5                    ; B14
+    movwf        INDF0
 
     return
-

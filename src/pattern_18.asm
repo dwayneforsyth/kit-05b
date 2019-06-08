@@ -79,9 +79,9 @@ p18_loop
 ;   run through the up/down bits.
 
 ;1R 0x0f
-    movlw        LOW C3_C2_reg
+    movlw        LOW C2_C1_reg
     movwf        FSR0L
-    movlw        HIGH C3_C2_reg
+    movlw        HIGH C2_C1_reg
     movwf        FSR0H
 
     btfsc        in1,0
@@ -90,9 +90,9 @@ p18_loop
     call         p18_led_down
 
 ;2R 0xf0
-    movlw        LOW C4_C3_reg
+    movlw        LOW C3_C2_reg
     movwf        FSR0L
-    movlw        HIGH C4_C3_reg
+    movlw        HIGH C3_C2_reg
     movwf        FSR0H
 
     btfsc        in1,1
@@ -101,9 +101,9 @@ p18_loop
     call         p18_led_down
 
 ;3R 0xf0
-    movlw        LOW C4_C0_reg
+    movlw        LOW C4_C3_reg
     movwf        FSR0L
-    movlw        HIGH C4_C0_reg
+    movlw        HIGH C4_C3_reg
     movwf        FSR0H
 
     btfsc        in1,2
@@ -123,9 +123,9 @@ p18_loop
     call         p18_led_down
 
 ;5R 0xf0
-    movlw        LOW C5_C1_reg
+    movlw        LOW A5_C5_reg
     movwf        FSR0L
-    movlw        HIGH C5_C1_reg
+    movlw        HIGH A5_C5_reg
     movwf        FSR0H
 
     btfsc        in1,4
@@ -134,9 +134,9 @@ p18_loop
     call         p18_led_down
 
 ;6R 0xf0
-    movlw        LOW C0_C3_reg
+    movlw        LOW A5_C2_reg
     movwf        FSR0L
-    movlw        HIGH C0_C3_reg
+    movlw        HIGH A5_C2_reg
     movwf        FSR0H
 
     btfsc        in1,5
@@ -146,9 +146,9 @@ p18_loop
   
 
 ;7R 0xf0
-    movlw        LOW C3_A5_reg
+    movlw        LOW C1_C0_reg
     movwf        FSR0L
-    movlw        HIGH C3_A5_reg
+    movlw        HIGH C1_C0_reg
     movwf        FSR0H
 
     btfsc        in1,6
@@ -157,9 +157,9 @@ p18_loop
     call         p18_led_down
 
 ;8R 0x0f
-    movlw        LOW C0_A5_reg
+    movlw        LOW C2_C5_reg
     movwf        FSR0L
-    movlw        HIGH C0_A5_reg
+    movlw        HIGH C2_C5_reg
     movwf        FSR0H
 
     btfsc        in1,7
@@ -169,9 +169,9 @@ p18_loop
 
 
 ;9R 0x0f
-    movlw        LOW A5_C2_reg
+    movlw        LOW C3_A5_reg
     movwf        FSR0L
-    movlw        HIGH A5_C2_reg
+    movlw        HIGH C3_A5_reg
     movwf        FSR0H
 
     btfsc        in0,0
@@ -181,9 +181,9 @@ p18_loop
 
 
 ;10R 0x0f
-    movlw        LOW A5_C5_reg
+    movlw        LOW C4_C0_reg
     movwf        FSR0L
-    movlw        HIGH A5_C5_reg
+    movlw        HIGH C4_C0_reg
     movwf        FSR0H
 
     btfsc        in0,1
@@ -193,9 +193,9 @@ p18_loop
  
 
 ;11R 0xf0
-    movlw        LOW C2_C1_reg
+    movlw        LOW C5_C1_reg
     movwf        FSR0L
-    movlw        HIGH C2_C1_reg
+    movlw        HIGH C5_C1_reg
     movwf        FSR0H
 
     btfsc        in0,2
@@ -204,9 +204,9 @@ p18_loop
     call         p18_led_down
 
 ;12R 0x0f
-    movlw        LOW C2_C5_reg
+    movlw        LOW C0_C3_reg
     movwf        FSR0L
-    movlw        HIGH C2_C5_reg
+    movlw        HIGH C0_C3_reg
     movwf        FSR0H
 
     btfsc        in0,3
@@ -214,10 +214,31 @@ p18_loop
     btfss        in0,3
     call         p18_led_down
  
-;1G 0xf0
-    movlw        LOW C3_C1_reg
+;13R 0x0f
+    movlw        LOW C0_A5_reg
     movwf        FSR0L
-    movlw        HIGH C3_C1_reg
+    movlw        HIGH C0_A5_reg
+    movwf        FSR0H
+
+    btfsc        in0,4
+    call         p18_led_up
+    btfss        in0,4
+    call         p18_led_down
+;14R 0x0f
+    movlw        LOW C1_C4_reg
+    movwf        FSR0L
+    movlw        HIGH C1_C4_reg
+    movwf        FSR0H
+
+    btfsc        in0,5
+    call         p18_led_up
+    btfss        in0,5
+    call         p18_led_down
+
+;1G 0xf0
+    movlw        LOW C2_C0_reg
+    movwf        FSR0L
+    movlw        HIGH C2_C0_reg
     movwf        FSR0H
 
     btfsc        in3,0
@@ -227,9 +248,9 @@ p18_loop
 
 
 ;2G 0xf0
-    movlw        LOW C4_C2_reg
+    movlw        LOW C3_C1_reg
     movwf        FSR0L
-    movlw        HIGH C4_C2_reg
+    movlw        HIGH C3_C1_reg
     movwf        FSR0H
 
     btfsc        in3,1
@@ -239,9 +260,9 @@ p18_loop
 
 
 ;3G 0xf0
-    movlw        LOW C4_A5_reg
+    movlw        LOW C4_C2_reg
     movwf        FSR0L
-    movlw        HIGH C4_A5_reg
+    movlw        HIGH C4_C2_reg
     movwf        FSR0H
 
     btfsc        in3,2
@@ -261,9 +282,9 @@ p18_loop
     call         p18_led_down
  
 ;5G 0xf0
-    movlw        LOW C5_C0_reg
+    movlw        LOW A5_C4_reg
     movwf        FSR0L
-    movlw        HIGH C5_C0_reg
+    movlw        HIGH A5_C4_reg
     movwf        FSR0H
 
     btfsc        in3,4
@@ -272,9 +293,9 @@ p18_loop
     call         p18_led_down
  
 ;6G 0xf0
-    movlw        LOW C0_C2_reg
+    movlw        LOW A5_C1_reg
     movwf        FSR0L
-    movlw        HIGH C0_C2_reg
+    movlw        HIGH A5_C1_reg
     movwf        FSR0H
 
     btfsc        in3,5
@@ -284,9 +305,9 @@ p18_loop
 
 
 ;7G 0x0f
-    movlw        LOW C3_C5_reg
+    movlw        LOW C1_A5_reg
     movwf        FSR0L
-    movlw        HIGH C3_C5_reg
+    movlw        HIGH C1_A5_reg
     movwf        FSR0H
 
     btfsc        in3,6
@@ -296,9 +317,9 @@ p18_loop
  
 
 ;8G 0x0f
-    movlw        LOW C0_C5_reg
+    movlw        LOW C2_C4_reg
     movwf        FSR0L
-    movlw        HIGH C0_C5_reg
+    movlw        HIGH C2_C4_reg
     movwf        FSR0H
 
     btfsc        in3,7
@@ -307,9 +328,9 @@ p18_loop
     call         p18_led_down
  
 ;9G 0x0f
-    movlw        LOW A5_C1_reg
+    movlw        LOW C3_C5_reg
     movwf        FSR0L
-    movlw        HIGH A5_C1_reg
+    movlw        HIGH C3_C5_reg
     movwf        FSR0H
 
     btfsc        in2,0
@@ -319,9 +340,9 @@ p18_loop
  
 
 ;10G 0x0f
-    movlw        LOW A5_C4_reg
+    movlw        LOW C4_A5_reg
     movwf        FSR0L
-    movlw        HIGH A5_C4_reg
+    movlw        HIGH C4_A5_reg
     movwf        FSR0H
 
     btfsc        in2,1
@@ -330,9 +351,9 @@ p18_loop
     call         p18_led_down
  
 ;11G 0x0f
-    movlw        LOW C2_C0_reg
+    movlw        LOW C5_C0_reg
     movwf        FSR0L
-    movlw        HIGH C2_C0_reg
+    movlw        HIGH C5_C0_reg
     movwf        FSR0H
 
     btfsc        in2,2
@@ -341,9 +362,9 @@ p18_loop
     call         p18_led_down
 
 ;12G 0x0f
-    movlw        LOW C2_C4_reg
+    movlw        LOW C0_C2_reg
     movwf        FSR0L
-    movlw        HIGH C2_C4_reg
+    movlw        HIGH C0_C2_reg
     movwf        FSR0H
 
     btfsc        in2,3
@@ -351,10 +372,33 @@ p18_loop
     btfss        in2,3
     call         p18_led_down
 
-;1B 0xf0
-    movlw        LOW C3_C0_reg
+;13G 0x0f
+    movlw        LOW C0_C5_reg
     movwf        FSR0L
-    movlw        HIGH C3_C0_reg
+    movlw        HIGH C0_C5_reg
+    movwf        FSR0H
+
+    btfsc        in2,4
+    call         p18_led_up
+    btfss        in2,4
+    call         p18_led_down
+
+;14G 0x0f
+    movlw        LOW C1_C3_reg
+    movwf        FSR0L
+    movlw        HIGH C1_C3_reg
+    movwf        FSR0H
+
+    btfsc        in2,5
+    call         p18_led_up
+    btfss        in2,5
+    call         p18_led_down
+
+
+;1B 0xf0
+    movlw        LOW C2_A5_reg
+    movwf        FSR0L
+    movlw        HIGH C2_A5_reg
     movwf        FSR0H
 
     btfsc        in5,0
@@ -364,9 +408,9 @@ p18_loop
 
 
 ;2B 0x0f
-    movlw        LOW C4_C1_reg
+    movlw        LOW C3_C0_reg
     movwf        FSR0L
-    movlw        HIGH C4_C1_reg
+    movlw        HIGH C3_C0_reg
     movwf        FSR0H
 
     btfsc        in5,1
@@ -375,9 +419,9 @@ p18_loop
     call         p18_led_down
  
 ;3B 0xf0
-    movlw        LOW C4_C5_reg
+    movlw        LOW C4_C1_reg
     movwf        FSR0L
-    movlw        HIGH C4_C5_reg
+    movlw        HIGH C4_C1_reg
     movwf        FSR0H
 
     btfsc        in5,2
@@ -398,9 +442,9 @@ p18_loop
 
 
 ;5B 0xf0
-    movlw        LOW C5_A5_reg
+    movlw        LOW A5_C3_reg
     movwf        FSR0L
-    movlw        HIGH C5_A5_reg
+    movlw        HIGH A5_C3_reg
     movwf        FSR0H
 
     btfsc        in5,4
@@ -410,9 +454,9 @@ p18_loop
  
 
 ;6B 0xf0
-    movlw        LOW C0_C1_reg
+    movlw        LOW A5_C0_reg
     movwf        FSR0L
-    movlw        HIGH C0_C1_reg
+    movlw        HIGH A5_C0_reg
     movwf        FSR0H
 
     btfsc        in5,5
@@ -421,9 +465,9 @@ p18_loop
     call         p18_led_down
  
 ;7B 0x0f
-    movlw        LOW C3_C4_reg
+    movlw        LOW C1_C5_reg
     movwf        FSR0L
-    movlw        HIGH C3_C4_reg
+    movlw        HIGH C1_C5_reg
     movwf        FSR0H
 
     btfsc        in5,6
@@ -432,9 +476,9 @@ p18_loop
     call         p18_led_down
  
 ;8B 0x0f
-    movlw        LOW C0_C4_reg
+    movlw        LOW C2_C3_reg
     movwf        FSR0L
-    movlw        HIGH C0_C4_reg
+    movlw        HIGH C2_C3_reg
     movwf        FSR0H
 
     btfsc        in5,7
@@ -444,9 +488,9 @@ p18_loop
  
 
 ;9B 0x0f
-    movlw        LOW A5_C0_reg
+    movlw        LOW C3_C4_reg
     movwf        FSR0L
-    movlw        HIGH A5_C0_reg
+    movlw        HIGH C3_C4_reg
     movwf        FSR0H
 
     btfsc        in4,0
@@ -456,9 +500,9 @@ p18_loop
   
 
 ;10B 0x0f
-    movlw        LOW A5_C3_reg
+    movlw        LOW C4_C5_reg
     movwf        FSR0L
-    movlw        HIGH A5_C3_reg
+    movlw        HIGH C4_C5_reg
     movwf        FSR0H
 
     btfsc        in4,1
@@ -468,9 +512,9 @@ p18_loop
 
 
 ;11B 0xf0
-    movlw        LOW C2_A5_reg
+    movlw        LOW C5_A5_reg
     movwf        FSR0L
-    movlw        HIGH C2_A5_reg
+    movlw        HIGH C5_A5_reg
     movwf        FSR0H
 
     btfsc        in4,2
@@ -480,14 +524,36 @@ p18_loop
 
 
 ;12B 0xf0
-    movlw        LOW C2_C3_reg
+    movlw        LOW C0_C1_reg
     movwf        FSR0L
-    movlw        HIGH C2_C3_reg
+    movlw        HIGH C0_C1_reg
     movwf        FSR0H
 
     btfsc        in4,3
     call         p18_led_up
     btfss        in4,3
+    call         p18_led_down
+
+;13B 0xf0
+    movlw        LOW C0_C4_reg
+    movwf        FSR0L
+    movlw        HIGH C0_C4_reg
+    movwf        FSR0H
+
+    btfsc        in4,4
+    call         p18_led_up
+    btfss        in4,4
+    call         p18_led_down
+
+;14B 0xf0
+    movlw        LOW C1_C2_reg
+    movwf        FSR0L
+    movlw        HIGH C1_C2_reg
+    movwf        FSR0H
+
+    btfsc        in4,5
+    call         p18_led_up
+    btfss        in4,5
     call         p18_led_down
 
     MOVLP HIGH strobe_delay

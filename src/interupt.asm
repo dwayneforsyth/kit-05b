@@ -236,7 +236,7 @@ drive_main_leds ; Drive the main LEDs.
 #ifdef SRGB_mtouch
     movlw   b'00111011'     ;mtouch has A0,A1 and A4 as inputs.
 #else
-    movlw   b'00111000'     ;set LED matrix pins to input (tri-stated)
+    movlw   b'00010100'     ;set LED matrix pins to input (tri-stated)
 #endif
     movwf   Ax_dir
     clrf    Cx_dir          ;set LED matrix pins to input (tri-stated)

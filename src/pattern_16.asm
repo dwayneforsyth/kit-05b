@@ -10,10 +10,9 @@ table_type_16
 ;
 ;  1 bytes
 ;
-;  ABBCCCCC
+;  RGBCCCC RrGgBbXX
 ;
-;  A = shire Right/Left
-;  BB = two bit intensity to shift on
+;  RBG = shire Right/Left R G B
 ;  CCCCC = Number of shifts to loop
 ;  ABCxxxxx rrggbbxx
 ;  A = Red up/down
@@ -115,10 +114,10 @@ t7_return
 red_up
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        LOW C2_C1_reg   ; index = 11 R
+    movlw        LOW C0_A5_reg   ; index = 13 R
     movwf        FSR0L
 
 red_up_loop
@@ -152,10 +151,10 @@ red_up_loop
 red_down
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        C4_C3_reg   ; index = 02 R
+    movlw        C3_C2_reg   ; index = 02 R
     movwf        FSR
 
 red_down_loop
@@ -191,10 +190,10 @@ red_down_loop
 green_up
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        C2_C0_reg   ; index = 11 G
+    movlw        C0_C5_reg   ; index = 13 G
     movwf        FSR
 
 green_up_loop
@@ -225,10 +224,10 @@ green_up_loop
 green_down
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        C4_C2_reg   ; index = 02 Green
+    movlw        C3_C1_reg   ; index = 02 Green
     movwf        FSR
 
 green_down_loop
@@ -260,10 +259,10 @@ green_down_loop
 blue_up
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        C2_A5_reg   ; index = 11 B
+    movlw        C0_C4_reg   ; index = 13 B
     movwf        FSR
 
 blue_up_loop
@@ -295,10 +294,10 @@ blue_up_loop
 blue_dowm
 ;**********************************************************************
 
-    movlw        0x0b
+    movlw        0x0d
     movwf        t17_loop
 
-    movlw        C4_C1_reg   ; index = 02 Blue
+    movlw        C3_C0_reg   ; index = 02 Blue
     movwf        FSR
 
 blue_down_loop

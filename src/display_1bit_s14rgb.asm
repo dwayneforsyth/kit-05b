@@ -6,10 +6,10 @@ display_1bit ; RGB Stick (14 * 3 = 42 LEDs
     movwf        speed              ;w has the speed/delay
 
 ; set all var 0xA0 to 0xEF to zero
-    movlw        LOW C3_C2_reg
+    movlw        LOW C2_C1_reg
     movwf        FSR0L
 
-    movlw        0x24
+    movlw        0x2A
     movwf        temp4
 
     movlw        0x00
