@@ -8,6 +8,8 @@ display_1bit ; RGB Stick (14 * 3 = 42 LEDs
 ; set all var 0xA0 to 0xEF to zero
     movlw        LOW C2_C1_reg
     movwf        FSR0L
+        movlw    HIGH C2_C1_reg
+    movwf        FSR0H
 
     movlw        0x2A
     movwf        temp4
